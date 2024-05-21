@@ -108,7 +108,7 @@ def enviar_mensajes(texto, number):
             "type": "text",
             "text": {
                 "preview_url": False,
-                "body": "¡Hola! 👋 soy CHIS tu asesor virtual.📍 ¿Necesitas información? Encuéntrala en https://mentetec.com/  ✅ Estas son algunas cosas que puedo responder. 📤La información deberá ser ingresada manualmente: \ln11️⃣ - Información de Pagos \ln2️⃣ - Soporte \ln3️⃣ - Ventas"
+                "body": "¡Hola! 👋 soy CHIS tu asesor virtual.📍 ¿Necesitas información? Encuéntrala en https://mentetec.com/  ✅ Estas son algunas cosas que puedo responder. 📤La información deberá ser ingresada manualmente: \n1️⃣ - Información de Pagos \n2️⃣ - Soporte \n3️⃣ - Dirección"
             }
         }
     elif "1" in texto:
@@ -120,6 +120,30 @@ def enviar_mensajes(texto, number):
             "text": {
                 "preview_url": False,
                 "body": "Prueba 1"
+            }
+        }
+    elif "2" in texto:
+          data = {
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": number,
+            "type": "text",
+            "text": {
+                "preview_url": False,
+                "body": "Prueba 2"
+            }
+        }
+    elif "3" in texto:
+          data = {
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": number,
+            "type": "location",
+            "location": {
+                "latitude": "-4.018031",
+                "longitude": "-79.211453",
+                "name": "Daniel Alvarez",
+                "address": "Francisco de Miranda",
             }
         }
     else:
