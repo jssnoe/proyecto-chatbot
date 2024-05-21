@@ -108,7 +108,18 @@ def enviar_mensajes(texto, number):
             "type": "text",
             "text": {
                 "preview_url": False,
-                "body": "¡Hola! 👋 soy CHIS tu asesor virtual.📍 ¿Necesitas información? Encuéntrala en https://mentetec.com/  ✅ Estas son algunas cosas que puedo responder. 📤La información deberá ser ingresada manualmente:  1️⃣ - Información de Pagos2️⃣ - Soporte 3️⃣ - Ventas 4️⃣ - Referidos"
+                "body": "¡Hola! 👋 soy CHIS tu asesor virtual.📍 ¿Necesitas información? Encuéntrala en https://mentetec.com/  ✅ Estas son algunas cosas que puedo responder. 📤La información deberá ser ingresada manualmente: \ln11️⃣ - Información de Pagos \ln2️⃣ - Soporte \ln3️⃣ - Ventas"
+            }
+        }
+    elif "1" in texto:
+          data = {
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": number,
+            "type": "text",
+            "text": {
+                "preview_url": False,
+                "body": "Prueba 1"
             }
         }
     else:
