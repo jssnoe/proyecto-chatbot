@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, render_template
 from flask_sqlalchemy import SQLAlchemy 
 from datetime import datetime
 import json
+import http.client
 
 app = Flask(__name__)
 
@@ -91,11 +92,54 @@ def recibir_mensajes(req):
 
                     agregar_mensajes_log(json.dumps(text))
                     agregar_mensajes_log(json.dumps(numero))
+                    enviar_mensajes(text, numero)
 
         return jsonify({'message': 'EVENT_RECEIVED'})
     except Exception as e:
         return jsonify({'message': 'EVENT_RECEIVED'})
      
+def enviar_mensajes(texto, number):
+    texto = texto.lower()
+    if "hola" in texto:
+        data = {
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": number,
+            "type": "text",
+            "text": {
+                "preview_url": False,
+                "body": "¡Hola! 👋 soy CHIS tu asesor virtual.📍 ¿Necesitas información? Encuéntrala en https://mentetec.com/  ✅ Estas son algunas cosas que puedo responder. 📤La información deberá ser ingresada manualmente:  1️⃣ - Información de Pagos2️⃣ - Soporte 3️⃣ - Ventas 4️⃣ - Referidos"
+            }
+        }
+    else:
+          data = {
+            "messaging_product": "whatsapp",
+            "recipient_type": "individual",
+            "to": number,
+            "type": "text",
+            "text": {
+                "preview_url": False,
+                "body": "¡Hola! 👋"
+            }
+        }
+          #convertir a json
+    data = json.dumps(data)
+
+    headers = {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer EAAG677DZAxLABO1YfCnaLB9OigvVr9pZBfMcCWjOobzKTvx8x34aKN0TOiG93G2eVZBlJgvsQGdRH2KyaN1lPjrel3LZBOAZB8c2pKQNRQWpqlZAJ0zmYaMQiRk2ZAuYKpmahuzyeuv61LJ7iXB51NrLppFO1HLBw4660rgFjTl6Sr7YFpb5aTj0dgTgxTCx1oQO8aAzGi1XjFjzE5z55QZD"
+    }
+    
+    connection = http.client.HTTPSConnection("graph.facebook.com")
+
+    try:
+        connection.request("POST", "/v19.0/328905146967467/messages", data, headers)
+        response = connection.getresponse()
+    except Exception as e:
+        agregar_mensajes_log(json.dumps(e))
+
+    finally:
+        connection.close()
 
 # agregar_mensaje_log(json.dumps("Test1"))
 if __name__ =='__main__':
