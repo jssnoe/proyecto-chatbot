@@ -162,7 +162,7 @@ def enviar_mensajes(texto, number):
 
     headers = {
         "Content-Type": "application/json",
-        "Authorization": "Bearer EAAG677DZAxLABO7MwbBeZALNqUhcdoTNfE3fnqe4wSNWVITpdQ6KpDKBxdscuOTRYZAadkTNOIXdgACk3KZAMZBuviKQE1qNkKA6pJd5kjjZBAazwhMiHIhvZC34NB7jZBTZCTF4ld5ZBuybOPM11aQ38c7PlzgdFGuWiiIS5Q3TVZBxdd6sBAkGyXFvktoXOKtRK9bXXaiZBJvt3SUeWZATrTIAZD"
+        "Authorization": "Bearer EAAG677DZAxLABO7cBgEcL5ZAZApFz9XFkpXi2tBcRZCVBI0pUbl0SSEGDrZC6P6oQyjQKGn0rdxJCPJvMWH8SBGN3oLHqA1aLOWMdWagnZCOjKSwiKlRsDfIEQ792Vtc92ScA4cyLT0KoVfMAumRj7AskpbnafQs6wQuge4c0hQnPaZCpsD2Dob8WIN2ZANuvLcp"
     }
     
     connection = http.client.HTTPSConnection("graph.facebook.com")
