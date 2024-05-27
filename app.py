@@ -51,7 +51,7 @@ def agregar_mensajes_log(texto):
     db.session.commit()
 
 #TOKEN DE VERIFICACIÓN
-TOKEN = "ANDERCODE"
+TOKEN = "MENTETECEC2024"
 
 @app.route('/webhook', methods=['GET','POST'])
 def webhook():
