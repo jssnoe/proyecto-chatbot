@@ -51,7 +51,7 @@ def agregar_mensajes_log(texto):
     db.session.commit()
 
 #TOKEN DE VERIFICACIÓN
-TOKEN = "MENTETECEC2024"
+TOKEN = "ANDERCODE"
 
 @app.route('/webhook', methods=['GET','POST'])
 def webhook():
@@ -163,7 +163,7 @@ def enviar_mensajes(texto, number):
 
     headers = {
         "Content-Type": "application/json",
-        "Authorization": "Bearer EAAG677DZAxLABOyZAEmocy1wXZBBQiN5V0VWnPJ53MyNom0kGzFwlgN9OBs1ocZC1OZApt7OwInWFoFb54DxM8vwWTDs94kdTZAEWy4xuwGsf0XgZClp9VWBbuwW4w13gVsIhiay5GRyzX62FKXbpkZAZAZAGgaa2J7dL9o2ocYesWHOWX2BwR6lbmsSLcihXicnp1cu0oMu9Q7mPTYlBL"
+        "Authorization": "Bearer EAAG677DZAxLABO2RZAd0b7cGuEBvwv34jUOZB2ZATUz9Gg51wq2xxYgMatdB1HRykuUIbMi4CemP8WriUROFoNwy3H0ZCunZB2jYCrDsAUv6x64E4VOQqZBOMmp6Pj884PPtZCUYFWxh7SQ4ZCU0mRPIOeAXEGObOgbSRBuYk2WTqPr4W5mEaS82sJ06FKbRTzEsnZAgNntGmD7DY3jaGU"
     }
     
     connection = http.client.HTTPSConnection("graph.facebook.com")
