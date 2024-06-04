@@ -70,7 +70,7 @@ def verificar_token(req):
     else:
         return jsonify({'error': 'Token invalido'}), 401
 
-
+#recibe mensajes
 def recibir_mensajes(req):
     try: 
         req = request.get_json()
